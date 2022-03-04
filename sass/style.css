@@ -1,0 +1,402 @@
+/*
+    Colores: 
+        fondo: rgba(0, 0, 0, 0.75);, #fa8d0024;
+        letras: white, black;
+        border: burlywood, black;
+    
+    Fuentes:
+        principales: 'Yeseva One', cursive;
+        secundarias: 'Playfair Display', serif;
+*/
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+h1 {
+  font-family: 'Yeseva One', cursive;
+  color: black;
+  text-align: center;
+  margin-left: 5rem;
+  width: 10rem;
+  border-bottom: 2px solid burlywood;
+}
+
+#encabezado {
+  position: relative;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+#encabezado nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 0.3rem 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#encabezado nav img {
+  width: 13rem;
+}
+
+#encabezado nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
+}
+
+#encabezado nav ul a {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  opacity: 0.8;
+  color: white;
+  text-decoration: none;
+  font-family: 'Yeseva One', cursive;
+  margin: 0rem 2rem;
+}
+
+#encabezado nav ul a li {
+  list-style: none;
+  font-family: 'Yeseva One', cursive;
+}
+
+#encabezado nav ul a:hover {
+  opacity: 1;
+}
+
+#banner {
+  background-image: url(../assets/banner.png);
+  margin-bottom: 4rem;
+  width: 100%;
+  height: 90vh;
+  background-repeat: round;
+}
+
+#banner .scroll-down {
+  height: 50px;
+  width: 30px;
+  border: 2px solid white;
+  position: absolute;
+  left: 94%;
+  bottom: 40px;
+  border-radius: 50px;
+}
+
+#banner .scroll-down::before,
+#banner .scroll-down::after {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  border: 2px solid lightyellow;
+  height: 10px;
+  width: 10px;
+  -webkit-transform: translate(-50%, -100%) rotate(45deg);
+          transform: translate(-50%, -100%) rotate(45deg);
+  border-top: transparent;
+  border-left: transparent;
+  -webkit-animation: scroll-down 1s ease-in-out infinite;
+          animation: scroll-down 1s ease-in-out infinite;
+}
+
+#banner .scroll-down::after {
+  top: 30%;
+  -webkit-animation-delay: .2s;
+          animation-delay: .2s;
+}
+
+@-webkit-keyframes scroll-down {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    top: 90%;
+  }
+}
+
+@keyframes scroll-down {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    top: 90%;
+  }
+}
+
+#salado, #dulce, #bebidas {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 4rem;
+  /*
+    @keyframes desplazar {
+        0% {
+            transform: translateY(60px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }*/
+}
+
+#salado article, #dulce article, #bebidas article {
+  text-align: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin: 2rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-box-shadow: 0 0 5px black;
+          box-shadow: 0 0 5px black;
+}
+
+#salado article img, #dulce article img, #bebidas article img {
+  width: 100%;
+  height: 15rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  background-repeat: round;
+}
+
+#salado article div, #dulce article div, #bebidas article div {
+  padding: 0.5rem;
+}
+
+#salado article div .title, #dulce article div .title, #bebidas article div .title {
+  text-align: center;
+  font-family: 'Yeseva One', cursive;
+  border-bottom: 2px solid burlywood;
+  margin-bottom: 0.5rem;
+}
+
+#salado article div p, #dulce article div p, #bebidas article div p {
+  text-align: left;
+  font-family: 'Playfair Display', serif;
+}
+
+#salado article div .precio, #dulce article div .precio, #bebidas article div .precio {
+  margin-top: 0.5rem;
+  text-align: center;
+  font-size: x-large;
+  font-family: serif;
+}
+
+#salado article:hover, #dulce article:hover, #bebidas article:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-box-shadow: 0 0 15px black;
+          box-shadow: 0 0 15px black;
+}
+
+#buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 100;
+  position: fixed;
+  right: 0%;
+  bottom: 15%;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  border: 2px solid black;
+}
+
+#buttons #topBtn {
+  border: 1px solid black;
+  background-color: #161816;
+  cursor: pointer;
+  color: white;
+  font-size: x-large;
+}
+
+#buttons #topBtn:hover {
+  background-color: #404040;
+}
+
+#buttons a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #161816;
+  border: 1px solid black;
+}
+
+#buttons a img {
+  width: 2rem;
+}
+
+#buttons a:hover {
+  background-color: #404040;
+}
+
+#footer {
+  padding-top: 1rem;
+  text-align: center;
+  background-color: #161817;
+  border-top: 2px solid black;
+}
+
+#footer article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 2rem;
+}
+
+#footer article div a {
+  color: white;
+  margin: 0rem 1rem;
+  text-decoration: none;
+  font-family: 'Playfair Display', serif;
+}
+
+#footer article .itemsFooter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: left;
+}
+
+#footer article .itemsFooter a {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+#footer article .socialFooter a {
+  margin: 0rem 0.5rem;
+}
+
+#footer article .socialFooter a img {
+  width: 2.5rem;
+}
+
+#footer article .copyright {
+  margin-top: 0.5rem;
+}
+
+#footer article .copyright p {
+  color: white;
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+}
+
+#footer .developer {
+  color: white;
+  margin: 0;
+  font-size: 0.8rem;
+  font-family: serif;
+}
+
+#footer .developer .devSite {
+  font-family: serif;
+  -webkit-text-decoration: underline white;
+          text-decoration: underline white;
+  color: white;
+}
+
+@media only screen and (min-width: 150px) and (max-width: 559px) {
+  #encabezado {
+    position: fixed;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.75);
+    -webkit-backdrop-filter: blur(3px);
+            backdrop-filter: blur(3px);
+  }
+  #encabezado nav {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #encabezado nav ul a {
+    margin: 0rem 0.5rem;
+  }
+  #banner {
+    background-image: url(../assets/banner2.png);
+    height: 100vh;
+    background-repeat: round;
+  }
+  h1 {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #salado, #dulce, #bebidas {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+  }
+  #footer article {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #footer article div img {
+    width: 19rem;
+  }
+}
+
+@media only screen and (min-width: 560px) and (max-width: 769px) {
+  #encabezado nav ul a {
+    margin: 0rem 0.8rem;
+  }
+  #salado, #dulce, #bebidas {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+/*# sourceMappingURL=style.css.map */

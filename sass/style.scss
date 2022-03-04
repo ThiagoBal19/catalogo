@@ -1,0 +1,345 @@
+/*
+    Colores: 
+        fondo: rgba(0, 0, 0, 0.75);, #fa8d0024;
+        letras: white, black;
+        border: burlywood, black;
+    
+    Fuentes:
+        principales: 'Yeseva One', cursive;
+        secundarias: 'Playfair Display', serif;
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+h1 {
+    font-family: 'Yeseva One', cursive;
+    color: black;
+    text-align: center;
+    margin-left: 5rem;
+    width: 10rem;
+    border-bottom: 2px solid burlywood;
+}
+
+#encabezado {
+    position: relative;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        padding: 0.3rem 1rem;
+        align-items: center;
+        justify-content: space-between;
+    
+        img {
+            width: 13rem;
+        }
+    
+        ul {
+            display: flex;
+            margin: 0;
+            
+            a {
+                transition: 0.5s;
+                opacity: 0.8;
+                color: white;
+                text-decoration: none;
+                font-family: 'Yeseva One', cursive;
+                margin: 0rem 2rem;
+                
+                li {
+                    list-style: none;
+                    font-family: 'Yeseva One', cursive;
+                }
+            }
+            a:hover {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+#banner {
+    background-image: url(../assets/banner.png);
+    margin-bottom: 4rem;
+    width: 100%;
+    height: 90vh;
+    background-repeat: round;
+
+    .scroll-down {
+        height: 50px;
+        width: 30px;
+        border: 2px solid white;
+        position: absolute;
+        left: 94%;
+        bottom: 40px;
+        border-radius: 50px;
+    }
+    .scroll-down::before,
+    .scroll-down::after {
+        content: '';
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        border: 2px solid lightyellow;
+        height: 10px;
+        width: 10px;
+        transform: translate(-50%, -100%) rotate(45deg);
+        border-top: transparent;
+        border-left: transparent;
+        animation: scroll-down 1s ease-in-out infinite;
+    }
+    .scroll-down::after {
+        top: 30%;
+        animation-delay: .2s;
+    }
+    @keyframes scroll-down {
+        0% {
+            opacity: 0;
+        }
+        30% {
+            opacity: 1;
+        }
+        60% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+            top: 90%;
+        }
+    }
+}
+
+#salado, #dulce, #bebidas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 4rem;
+
+    article {
+        text-align: center;
+        align-self: center;
+        margin: 2rem;
+        border: 1px solid black;
+        border-radius: 1rem;
+        transition: 0.5s;
+        box-shadow: 0 0 5px black;
+        //animation: desplazar 1s;
+
+        img {
+            width: 100%;
+            height: 15rem;
+            border-top-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+            background-repeat: round;
+        }
+
+        div {
+            padding: 0.5rem;
+
+            .title {
+                text-align: center;
+                font-family: 'Yeseva One', cursive;
+                border-bottom: 2px solid burlywood;
+                margin-bottom: 0.5rem;
+            }
+    
+            p {
+                text-align: left;
+                font-family: 'Playfair Display', serif;
+            }
+            .precio {
+                margin-top: 0.5rem;
+                text-align: center;
+                font-size: x-large;
+                font-family: serif;
+            }
+        }
+    }
+    article:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px black;
+    }
+    /*
+    @keyframes desplazar {
+        0% {
+            transform: translateY(60px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }*/
+}
+
+#buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 100;
+    position: fixed;
+    right: 0%;
+    bottom: 15%;
+    backdrop-filter: blur(5px);
+    transition: 0.5s;
+    border: 2px solid black;
+    
+    #topBtn {
+        border: 1px solid black;
+        background-color: rgb(22, 24, 22);
+        cursor: pointer;
+        color: white;
+        font-size: x-large;
+    }
+    #topBtn:hover {
+        background-color: #404040;
+    }
+    
+    a {
+        display: flex;
+        align-items: center;
+        background-color: rgb(22, 24, 22);
+        border: 1px solid black;
+        
+        img {
+            width: 2rem;
+        }
+    }
+    a:hover {
+        background-color: #404040;
+    }
+}
+
+#footer {
+    padding-top: 1rem;
+    text-align: center;
+    background-color: rgb(22, 24, 23);
+    border-top: 2px solid black;
+
+    article {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 2rem;
+
+        div {
+            a {
+                color: white;
+                margin: 0rem 1rem;
+                text-decoration: none;
+                font-family: 'Playfair Display', serif;
+            }
+        }
+
+        .itemsFooter {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+
+            a {
+                font-size: 0.9rem;
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        .socialFooter {
+            a {
+                margin: 0rem 0.5rem;
+
+                img {
+                    width: 2.5rem;
+                }
+            }
+        }
+
+        .copyright {
+            margin-top: 0.5rem;
+
+            p {
+                color: white;
+                margin: 0;
+                font-family: 'Playfair Display', serif;
+            }
+        }
+
+    }
+
+    .developer {
+        color: white;
+        margin: 0;
+        font-size: 0.8rem;
+        font-family: serif;
+
+        .devSite {
+            font-family: serif;
+            text-decoration: underline white;
+            color: white;
+        }
+    }
+}
+
+@media only screen and (min-width: 150px) and (max-width: 559px) {
+    #encabezado {
+        position: fixed;
+        z-index: 100;
+        background-color: rgba(0, 0, 0, 0.75);
+        backdrop-filter: blur(3px);
+
+        nav {
+            flex-direction: column;
+
+            ul {
+                a {
+                    margin: 0rem 0.5rem;
+                }
+            }
+        }
+    }
+
+    #banner {
+        background-image: url(../assets/banner2.png);
+        height: 100vh;
+        background-repeat: round;
+    }
+
+    h1 {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #salado, #dulce, #bebidas {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    #footer {
+        article {
+            flex-direction: column;
+
+            div {
+                img {
+                    width: 19rem;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 560px) and (max-width: 769px) {
+    #encabezado {
+        nav {
+            ul {
+                a {
+                    margin: 0rem 0.8rem;
+                }
+            }
+        }
+    }
+
+    #salado, #dulce, #bebidas {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
