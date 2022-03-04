@@ -304,6 +304,10 @@ h1 {
         background-image: url(../assets/banner2.png);
         height: 100vh;
         background-repeat: round;
+
+        .scroll-down {
+            left: 50%;
+        }
     }
 
     h1 {
@@ -339,7 +343,34 @@ h1 {
         }
     }
 
+    #banner {
+        .scroll-down {
+            left: 88%;
+        }
+    }
+
     #salado, #dulce, #bebidas {
         grid-template-columns: repeat(3, 1fr);
+
+        article {
+            height: 27rem;
+
+            div {
+                height: 38%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+        }
+    }
+
+    #footer {
+        article {
+            .socialFooter {
+                a {
+                    margin: 0rem 0.3rem;
+                }
+            }
+        }
     }
 }
